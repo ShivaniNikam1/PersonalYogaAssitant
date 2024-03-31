@@ -65,15 +65,18 @@ const Blogs = () => {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
   };
 
-  return (
-    <div>
-        <Navbar/>
+  // ... (existing imports and code)
+
+return (
+  <div>
+    <Navbar />
     <div className="blogs-container">
       <div className="main-content">
-        {isLoggedIn && (
-          <>
-            <h2>Add a New Blog</h2>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+          {isLoggedIn && (
+            <>
+              <h2>Add a New Blog</h2>
+              <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="title">Title:</label>
                 <input
@@ -93,13 +96,13 @@ const Blogs = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit">Add Blog</button>
-            </form>
-          </>
-        )}
-
-        <h2>Existing Blogs</h2>
-        <div className="existing-blogs">
+                <button type="submit">Add Blog</button>
+              </form>
+            </>
+          )}
+        </div>
+        <h2 className="section-title">Latest Blogs</h2>
+        <div className="blog-list">
           {blogs.map(blog => (
             <div key={blog.id} className="blog-item">
               <h3>{blog.title}</h3>
@@ -109,9 +112,17 @@ const Blogs = () => {
           ))}
         </div>
       </div>
+      <div className="side-content">
+        <div className="quote-container">
+          <p className="quote">"Yoga is the journey of the self, through the self, to the self."</p>
+          <p className="quote-author">- The Bhagavad Gita</p>
+        </div>
+        {/* You can add an image or more quotes here */}
+      </div>
     </div>
-    </div>
-  );
+  </div>
+);
+
 };
 
 export default Blogs;

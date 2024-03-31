@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -59,7 +59,7 @@ const Login = () => {
         />
       </div>
       <button onClick={handleSubmit}>Login</button>
-      <p>Don't have an account? <button className="register-button">Register</button></p>
+      <p>Don't have an account? <button onClick={() => { window.location.href = "/register"; }} className="register-button">Register</button></p>
     </div>
   );
 };

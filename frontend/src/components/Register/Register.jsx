@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -90,7 +90,7 @@ const Register = () => {
         />
       </div>
       <button onClick={handleSubmit}>Register</button>
-      <p>Already have an account? <button className="login-button">Login</button></p>
+      <p>Already have an account? <button className="login-button" onClick={() => { window.location.href = "/login"; }}>Login</button></p>
     </div>
   );
 };

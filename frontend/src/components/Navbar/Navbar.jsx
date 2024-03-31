@@ -3,7 +3,7 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Blogs from '../Blogs/Blogs';
+
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,11 +28,19 @@ const Navbar = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    setIsLoggedIn(false);
+    setUserData(null);
+    window.location.href = "/login";
+  };
+
   const renderUserInfo = () => {
     if (isLoggedIn) {
       return (
         <div className="user-info">
-          {userData && <span>Hello, {userData.name}</span>}
+          
+          {userData && <span onClick={handleLogout}>Hello, {userData.name}</span>}
         </div>
       );
     } else {
@@ -52,9 +60,9 @@ const Navbar = () => {
           <a href="/">Yoga Assistant</a>
         </div>
         <div className="navbar-links">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
           <a href="/poses">Poses</a>
-          <a href="/practice">Practice</a>
+          <a href="/yogaDetection">Practice</a>
           <Link to='/blogs'>Blogs</Link>
         </div>
         {renderUserInfo()}

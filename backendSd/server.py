@@ -1,6 +1,11 @@
-from flask import Flask, jsonify,request,session
+from flask import Flask, jsonify,request,session,Response,render_template
 from flask_cors import CORS,cross_origin
 from flask_bcrypt import Bcrypt
+import cv2
+
+# Import your pose detection and classification functions
+import mediapipe as mp
+from yoga import detectPose, classifyPose
 
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -34,6 +39,38 @@ with app.app_context():
 # CORS(app,resources={r"/api/*":{"origins":"*"}})
 CORS(app,supports_credentials=True)
 
+# Initialize mediapipe pose class and drawing utils
+mp_pose = mp.solutions.pose
+mp_drawing = mp.solutions.drawing_utils
+
+pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.5, model_complexity=1)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+def generate_frames():
+    video = cv2.VideoCapture(0)  # Open webcam
+    while True:
+        success, frame = video.read()
+        if not success:
+            break
+        else:
+            frame, landmarks = detectPose(frame, pose)  # Call your pose detection function
+            if landmarks:
+                # Call classifyPose function with both landmarks and frame
+                label = classifyPose(landmarks, frame)  
+                # Draw label on frame
+                cv2.putText(frame, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+
+@app.route('/api/video_feed')
+def video_feed():
+    return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 @app.route("/api/login",methods=["POST"])

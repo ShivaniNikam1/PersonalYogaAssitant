@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Blogs.css';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Navbar/Footer';
 
 const Blogs = () => {
   const [title, setTitle] = useState('');
@@ -117,9 +118,27 @@ return (
           <p className="quote">"Yoga is the journey of the self, through the self, to the self."</p>
           <p className="quote-author">- The Bhagavad Gita</p>
         </div>
+        <div className="quote-container">
+          <p className="quote">"The body is your temple. Keep it pure and clean for the soul to reside in."</p>
+          <p className="quote-author">- B.K.S. Iyengar</p>
+        </div>
+        <div className="quote-container">
+          <p className="quote">"Yoga is the art of living a happy and peaceful life."</p>
+          <p className="quote-author">- Amit Ray</p>
+        </div>
+        <div className="quote-container">
+          <p className="quote">"Yoga is the journey of the self, to the self, through the self."</p>
+          <p className="quote-author">- The Yoga Sutras of Patanjali</p>
+        </div>
+        <div className="quote-container">
+          <p className="quote">"Yoga teaches us to cure what need not be endured and endure what cannot be cured."</p>
+          <p className="quote-author">- B.K.S. Iyengar</p>
+        </div>
+
         {/* You can add an image or more quotes here */}
       </div>
     </div>
+    <Footer></Footer>
   </div>
 );
 

@@ -2,12 +2,14 @@ import React from 'react';
 // import axios from 'axios';
 import './YogaDetection.css';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Navbar/Footer';
 
 const YogaDetection = () => {
 
   return (
     <>
     <Navbar/>
+
     <div className="container">
        
     <div className="video-container">
@@ -18,7 +20,12 @@ const YogaDetection = () => {
         alt="Video Feed"
       />
     </div>
+    <br></br>
+
+   
+
   </div>
+  <Footer></Footer>
   </>
   );
 };

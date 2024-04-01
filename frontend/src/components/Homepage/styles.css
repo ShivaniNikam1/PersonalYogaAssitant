@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;  /* Set a clean, readable font */
+    margin: 0;  /* Remove default browser margins */
+    padding: 0;  /* Remove default browser padding */
+    color: rgb(77, 5, 5);
+  }
+  
+  .container {
+    width: 80%;  /* Set a comfortable width for most screens */
+    margin: 0 auto;  /* Center the content horizontally */
+    padding: 20px;  /* Add some breathing room */
+  }
+  
+  /* Header Styles */
+  h1 {
+    text-align: center;  /* Center the title */
+    font-size: 2em;  /* Adjust title size as needed */
+    margin-bottom: 10px;  /* Add some space after the title */
+  }
+  
+  p {
+    text-align: center;  /* Center paragraphs */
+    font-size: 1.2em;  /* Adjust paragraph size as needed */
+    margin-bottom: 20px;  /* Add some space after paragraphs */
+  }
+  
+  /* Button Styles */
+  .primary-button,
+  .secondary-button,
+  .tertiary-button {
+    display: inline-block;  /* Make buttons display side-by-side */
+    padding: 10px 20px;  /* Set button padding */
+    border: none;  /* Remove default button borders */
+    border-radius: 5px;  /* Add rounded corners */
+    cursor: pointer;  /* Indicate clickable buttons */
+    margin-right: 10px;  /* Add spacing between buttons (adjust as needed) */
+  }
+  
+  .primary-button {
+    background-color: #007bff;  /* Blue for primary action */
+    color: white;  /* White text for primary button */
+  }
+  
+  .secondary-button {  /* Commented out for now, uncomment if you want them */
+    /* background-color: #ffc107;  /* Orange for secondary action */
+    /* color: black;  /* Black text for secondary button */
+  }
+  
+  .tertiary-button {
+    background-color: #28a745;  /* Green for tertiary action */
+    color: white;  /* White text for tertiary button */
+  }
+  
+  /* Blog Section Styles */
+  .blog-section {
+    margin-bottom: 20px;  /* Add space after the blog section */
+    background-color: rgb(248, 234, 217);
+  }
+  
+  .blog-button {
+    text-align: center;  /* Center the "Visit Blog" button */
+  }
+  
+  /* Yoga Poses Section Styles */
+  .poses-section {
+    overflow-x: auto;  /* Enable horizontal scrolling for pose cards */
+    white-space: nowrap;  /* Prevent line breaks between pose cards */
+    background-color: rgb(248, 234, 217);
+  }
+  
+  .horizontal-scroll {
+    display: inline-block;  /* Allow horizontal scrolling within container */
+  }
+  
+  .pose-card {
+    display: inline-block;  /* Display pose cards side-by-side */
+    width: 200px;  /* Set width for each pose card */
+    margin-right: 10px;  /* Add space between cards */
+    padding: 10px;  /* Add padding for card content */
+    border: 1px solid #ddd;  /* Add a subtle border */
+    border-radius: 5px;  /* Add rounded corners */
+    text-align: center;  /* Center content within pose cards */
+    
+  }
+  
+  .pose-image {
+    width: 100%;  /* Fill the card width with the pose image */
+    height: auto;  /* Maintain image aspect ratio */
+
+  }
+  
+  .pose-details p {
+    white-space: normal; /* Allow text to wrap within card */
+    /* Adjust these values as needed for desired spacing and line height */
+    line-height: 1.2;
+    max-height: 5em; /* Sets a maximum height for the description to prevent excessive wrapping */
+  }
+  
+  
+  h3 {
+    font-size: 1.2em;  /* Adjust pose name size as needed */
+    margin-bottom: 5px;  /* Add spacing between title and description */
+  }
+  
+  /* Add your own styles here! 
+  
+    - You can change background colors, fonts, and layouts to match your brand.
+    - Consider adding hover effects to buttons and pose cards.
+    - You can add media queries to adjust the styles for different screen sizes.
+  */
+  

@@ -1,3 +1,11 @@
+.bg{
+  /* height: 100vh; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../../images/ff.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .container {
     display: flex;
     justify-content: center;

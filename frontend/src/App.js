@@ -6,6 +6,8 @@ import Homepage from './components/Homepage/Homepage';
 import Blogs from './components/Blogs/Blogs';
 import YogaDetection from './components/YogaDetection/YogaDetection';
 import PosePage from './components/Poses/PosePage';
+import Mainpage from './components/Mainpage/Mainpage';
+
 
 
 function App() {
@@ -14,10 +16,12 @@ function App() {
     <Routes>
       <Route path='/register' element={<Register/>}></Route>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/' element={<Homepage/>}/>
+      <Route path='/mm' element={<Homepage/>}/>
       <Route path='/blogs' element={<Blogs/>}/>
       <Route path='/poses' element={<PosePage/>}/>
       <Route path='/yogaDetection' element={<YogaDetection/>}/>
+      
+      <Route path='/' element={<Mainpage/>}/>
     </Routes>
     </BrowserRouter>
   );

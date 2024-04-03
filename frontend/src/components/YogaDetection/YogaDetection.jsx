@@ -8,8 +8,8 @@ const YogaDetection = () => {
 
   return (
     <>
-    <Navbar/>
-
+    
+    <section className='bg'>
     <div className="container">
        
     <div className="video-container">
@@ -26,6 +26,7 @@ const YogaDetection = () => {
 
   </div>
   <Footer></Footer>
+  </section>
   </>
   );
 };

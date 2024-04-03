@@ -70,7 +70,7 @@ const Blogs = () => {
 
 return (
   <div>
-    <Navbar />
+  
     <div className="blogs-container">
       <div className="main-content">
         <div className="form-container">
@@ -98,7 +98,9 @@ return (
                 ></textarea>
               </div>
                 <button type="submit">Add Blog</button>
+                {/* <button type="submit">Add Blog</button> */}
               </form>
+              
             </>
           )}
         </div>

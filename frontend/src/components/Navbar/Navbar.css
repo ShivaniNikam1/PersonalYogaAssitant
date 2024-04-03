@@ -1,8 +1,8 @@
 .navbar {
-  background-color: #333;
+  /* background-color: #333; */
   color: white;
-  padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .navbar-container {
@@ -22,14 +22,26 @@
   text-decoration: none;
 }
 
-.navbar-links {
+/* .navbar-links {
+  
+  
   flex-grow: 1;
   display: flex;
   justify-content: center;
+} */
+
+.navbar-links a {
+  margin-left: 30px;  /* Increased margin-left value */
+  font-size: 20px;
+  
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a {
   margin-left: 20px;
+  margin-right: 10px;
   font-size: 18px;
   color: white;
   text-decoration: none;
@@ -49,7 +61,7 @@
 .user-info a {
   margin-left: 20px;
   font-size: 18px;
-  color: #333;
+  color: white;
   text-decoration: none;
 }
 
@@ -75,13 +87,23 @@
 }
 
 .user-info button.login-button {
-  background-color: #007bff;
-  color: white;
+  padding: 10px 20px;
+    font-size: 18px;
+    width: auto;
+    background-color: transparent; /* Remove the default blue background color */
+    border: 2px solid white;/* Optionally remove the border */
+    color: white;
+    transition: background-color 0.3s ease; 
 }
 
 .user-info button.register-button {
-  background-color: #28a745;
-  color: white;
+  padding: 10px 20px;
+    font-size: 18px;
+    width: auto;
+    background-color: transparent; /* Remove the default blue background color */
+    border: 2px solid white;/* Optionally remove the border */
+    color: white;
+    transition: background-color 0.3s ease; 
 }
 
 .user-info button:hover {
